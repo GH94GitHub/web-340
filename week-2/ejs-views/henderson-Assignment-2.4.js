@@ -1,3 +1,9 @@
+/*===============================
+; Title: Assignment 2.4
+; Author: George Henderson
+; Date: 12 January 2021
+; Description: Uses ejs to render web pages
+;===============================*/
 const express = require('express');
 const path = require('path');
 
