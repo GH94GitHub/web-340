@@ -1,3 +1,11 @@
+/*====================
+; Title: Assignment 3.4
+; Author: George Henderson
+; Date: 23 January 2021
+; Description: Uses EJS to route requests to
+; their respective files.
+;====================*/
+
 const { response } = require('express');
 var express = require('express');
 var logger = require('morgan');
