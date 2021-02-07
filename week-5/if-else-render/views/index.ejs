@@ -1,0 +1,11 @@
+<div role="main" class="container">
+  <br/><br/>
+  <h2>Name List</h2>
+  <ul>
+    <% if (names.length > 0) { %>
+      <% for (let i = 0; i < names.length; i++) { %>
+        <li><strong><%= names[i] %></strong></li>
+      <% } %>
+    <% } %>
+  </ul>
+</div>
