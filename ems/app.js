@@ -59,12 +59,41 @@ app.get('/new', function(req, res) {
   res.render('new', {
     title: 'New Page',
     csrfToken: req.csrfToken(),
-    message: "Enter a new Employee."
+    message: "Enter a new Employee"
+  });
+});
+
+app.get('/list', function(req, res) {
+  Employee.find({}, function(err, employees) {
+    if (err) throw err;
+
+    res.render('list', {
+      title: 'List Employees',
+      employees: employees
+    });
   });
 });
 
 app.post("/process", function(req, res) {
-  console.log(req.body.txtName);
+  if(!req.body.txtName) {
+    res.status(400).send("Entry must have a name");
+    return;
+  }
+  var employeeFullName = req.body.txtName.trim();
+  var nameSplit = employeeFullName.split(' ');
+  var firstName = nameSplit[0];
+  var lastName = nameSplit[1];
+
+
+  var employee = new Employee({
+    firstName: firstName,
+    lastName: lastName
+  });
+
+  employee.save(function(err) {
+    if (err) throw err;
+    console.log('Employee saved successfully!')
+  });
   res.redirect("/");
 });
 
