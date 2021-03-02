@@ -1,5 +1,20 @@
+/* Elements */
 body {
   background-color: rgb(128,128,128);
+}
+div[role="main"] {
+  min-height: 80vh;
+}
+form {
+  min-width: 35%;
+  max-width: 45%;
+  margin: auto;
+}
+
+table {
+  margin:auto;
+  max-width: fit-content;
+  min-width: 30%;
 }
 /*----------------------------------*/
 /* Nav */
@@ -22,6 +37,9 @@ nav li {
   padding: 15px;
   border: 1px solid black;
   margin: 20px;
+
+  color: white;
+  background-color: #343a40;
 }
 .section { /*! This is just a placeholder for UI look */
   width: 250px;
@@ -31,6 +49,3 @@ nav li {
 }
 /*----------------------------------*/
 /* Controls */
-input {
-  margin: 25px;
-}
