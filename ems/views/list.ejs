@@ -8,12 +8,14 @@
           <thead>
             <th>First Name</th>
             <th>Last Name</th>
+            <th></th>
           </thead>
           <tbody>
             <% employees.forEach(function(employee) { %>
               <tr>
                 <td><%= employee.firstName %></td>
                 <td><%= employee.lastName %></td>
+                <td><a href="/view/<%= employee.firstName%>" class="btn btn-success">EDIT</a></td>
               </tr>
             <% }) %>
           </tbody>
