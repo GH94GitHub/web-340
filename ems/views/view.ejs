@@ -1,0 +1,19 @@
+<%- include('_header')%>
+<%- include('_navbar')%>
+
+  <div class="container" role="main" style="width:50%">
+    <br><br>
+    <h2><%= employees[0].firstName %>'s Record</h2>
+    <div class="form-group">
+      <label for="txtFirstName">First Name: </label>
+      <input id="txtFirstName" class="form-control" type="text" value="<%= employees[0].firstName%>"/>
+    </div>
+    <div class="form-group">
+      <label for="txtLastName">Last Name: </label>
+      <input id="txtLastName" class="form-control" type="text" value="<%= employees[0].lastName%>">
+    </div>
+    <a href="/list" class="btn btn-primary">Back to Employee List</a>
+  </div>
+
+<% -include('_footer')%>
+<%- include('_scripts')%>
