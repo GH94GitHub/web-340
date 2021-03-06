@@ -74,6 +74,19 @@ app.get('/list', function(req, res) {
   });
 });
 
+app.get('/view/:empFirstName', function(req,res) {
+  var empFirstName = req.params.empFirstName;
+  Employee.find({'firstName':empFirstName}, function(err, employees) {
+    if (err) throw err;
+    if (employees.length > 0) {
+      res.render('view', {
+        title: "Employee Record",
+        employees: employees
+      });
+    }
+  });
+});
+
 app.post("/process", function(req, res) {
   if(!req.body.txtName) {
     res.status(400).send("Entry must have a name");
