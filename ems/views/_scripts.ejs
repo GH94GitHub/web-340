@@ -1,1 +1,15 @@
 <!--Scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $('#btnSubmitName').click(function(e) {
+    if ($('#txtName').val() && !(/\d/.test($('#txtName').val())) && !(/[$-/:-?{-~!"^_`\[\]]/.test($('#txtName').val()))) {
+      // hide alert
+      $('#invalidEntry').toggle(false);
+    }
+    else {
+      // show alert
+      $('#invalidEntry').toggle(true);
+      e.preventDefault();
+    }
+  });
+</script>
