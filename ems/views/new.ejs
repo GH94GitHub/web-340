@@ -3,7 +3,9 @@
 <body>
   <div class="container" role="main">
     <br><br>
-    <!--TODO: Make alert with validation if user submits invalid entry-->
+    <div class="alert alert-danger" role="alert" id="invalidEntry" style="display: none;">
+      <p>Warning! Invalid Entry!</p>
+    </div>
     <form action="/process" method="POST">
       <div class="form-group">
         <h4><%= message %></h4>
@@ -13,7 +15,7 @@
       <div class="form-group" style="overflow: hidden;">
         <input name="_csrf" value="<%= csrfToken %>" type="hidden">
         <a href="/" class="btn btn-primary">Cancel</a>
-        <button type="submit" class="btn btn-primary float-right">Submit</button>
+        <button type="submit" id="btnSubmitName" class="btn btn-primary float-right">Submit</button>
       </div>
     </form>
   </div>
